@@ -16,10 +16,6 @@ import com.template.app.entity.AutorEntity;
 import com.template.app.exception.AppException;
 import com.template.app.service.AutorService;
 
-/**
- * Class Rest to provide company rest operations
- *
- */
 @Path("/autor")
 @Produces({ MediaType.APPLICATION_JSON })
 @Consumes({ MediaType.APPLICATION_JSON })

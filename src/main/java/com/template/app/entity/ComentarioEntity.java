@@ -1,5 +1,7 @@
 package com.template.app.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,10 +38,24 @@ public class ComentarioEntity implements IEntity<Long> {
 	@Size(min=2, max = 200)
 	@Column
 	private String comentario;
+	
+	@NotNull
+	@Column
+	private Date data;
 
-	public ComentarioEntity(Long id, String comentario) {
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	
+	public ComentarioEntity(Long id, String comentario, Date data) {
 		this.id = id;
 		this.comentario = comentario;
+		this.data = data;
 	}
 
 	public ComentarioEntity() {

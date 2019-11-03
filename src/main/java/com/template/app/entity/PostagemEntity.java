@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="POSTAGEM")
-@SequenceGenerator(name = "COMPANY_ID_POSTAGEM", sequenceName = "SE_POSTAGEM", allocationSize = 1)
+@SequenceGenerator(name = "POSTAGEM_ID_GENERATOR", sequenceName = "SE_POSTAGEM", allocationSize = 1)
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 
@@ -33,7 +33,7 @@ public class PostagemEntity implements IEntity<Long> {
 	private Long id;
 	
 	@NotNull 
-	@Size(min=2, max = 200)
+	@Size(min=2, max = 800)
 	@Column
 	private String postagem;
 

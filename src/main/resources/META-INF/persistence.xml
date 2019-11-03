@@ -15,6 +15,7 @@
 		<!-- Entities -->
 		<class>com.template.app.entity.AutorEntity</class>
 		<class>com.template.app.entity.PostagemEntity</class>
+		<class>com.template.app.entity.ComentarioEntity</class>
 		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
