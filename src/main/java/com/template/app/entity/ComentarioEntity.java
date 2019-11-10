@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
@@ -16,6 +18,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name="COMENTARIO")
@@ -24,7 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 @NamedQueries({
-    @NamedQuery(name="ComentarioEntity.retrieveAll", query="Select distinct c from ComentarioEntity c")
+    @NamedQuery(name="ComentarioEntity.retrieveAll", query="Select distinct c from ComentarioEntity c order by c.data desc")
 }) 
 
 public class ComentarioEntity implements IEntity<Long> {
@@ -39,9 +42,13 @@ public class ComentarioEntity implements IEntity<Long> {
 	@Column
 	private String comentario;
 	
-	@NotNull
 	@Column
 	private Date data;
+	
+    @ManyToOne (targetEntity = PostagemEntity.class)  
+    @JoinColumn(name="POSTAGEM_ID", referencedColumnName="ID")
+    @XmlTransient
+	private PostagemEntity postagemEntity;
 
 	public Date getData() {
 		return data;

@@ -12,7 +12,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.template.app.entity.AutorEntity;
 import com.template.app.entity.ComentarioEntity;
 import com.template.app.exception.AppException;
 import com.template.app.service.ComentarioService;

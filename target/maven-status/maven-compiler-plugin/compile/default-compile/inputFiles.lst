@@ -1,0 +1,17 @@
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\exception\AppException.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\messages\AppBeanMessages.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\AutorService.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\entity\AutorEntity.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\messages\IMessageKey.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\repository\ComentarioRepository.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\repository\PostagemRepository.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\rest\autor\AutorRest.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\entity\ComentarioEntity.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\repository\AutorRepository.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\entity\PostagemEntity.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\exception\AppExceptionMapper.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\entity\IEntity.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\ComentarioService.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\rest\postagem\PostagemRest.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\rest\comentario\ComentarioRest.java
+C:\Users\freno\git\blogjee\src\main\java\com\template\app\service\PostagemService.java

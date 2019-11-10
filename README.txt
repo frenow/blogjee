@@ -7,6 +7,30 @@ http://localhost:8080/templatejee/rest/company/all
 http://localhost:8080/templatejee/rest/employee/all
 
 
+criar novo autor
+POST http://localhost:8080/blogjee/rest/autor/create
+{
+"name": "Emerson",
+"id": null
+}
+
+criar nova postagem
+POST http://localhost:8080/blogjee/rest/postagem/create
+{
+	"autorEntity": "3",
+	"postagem": "teste de gravacao nova postagem",
+	"id": null
+}
+
+criar novo comentario
+POST http://localhost:8080/blogjee/rest/comentario/create
+{
+	"comentario": "teste de comentario da postagem 3",
+	"data": 1573349982238,
+	"postagemEntity": "3",
+	"id": null
+}
+
 Commands:
 =========
 

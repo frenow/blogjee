@@ -40,10 +40,8 @@ public class ComentarioRepository {
 			return list;
 
 		} catch (AppException e) {
-			System.out.println("erro 1"+e);
 			throw e;
 		} catch (Exception e) {
-			System.out.println("erro 2"+e);
 			throw AppBeanMessages.PERSISTENCE_ERROR.create(e, e.getMessage());
 		}
 	}
@@ -52,7 +50,7 @@ public class ComentarioRepository {
 			CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
 			CriteriaQuery q = cb.createQuery(AutorEntity.class);
 			Root o = q.from(AutorEntity.class);
-			o.fetch("comentarios", JoinType.LEFT);
+			//o.fetch("comentarios", JoinType.LEFT);
 			q.select(o);
 			q.where(cb.equal(o.get("id"), id));
 

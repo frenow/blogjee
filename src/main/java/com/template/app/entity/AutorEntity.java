@@ -1,12 +1,17 @@
 package com.template.app.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -37,15 +42,26 @@ public class AutorEntity implements IEntity<Long> {
 	@Column
 	private String name;
 	
+	@OneToMany (targetEntity = PostagemEntity.class, fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="autorEntity")
+	private List<PostagemEntity> listPostagemEntity;
+	
+
+	public AutorEntity(Long id, String name, List<PostagemEntity> listPostagemEntity) {
+		this.id = id;
+		this.name = name;
+		this.listPostagemEntity = listPostagemEntity;
+	}
+
+	public List<PostagemEntity> getListPostagemEntity() {
+		return listPostagemEntity;
+	}
+
+	public void setListPostagemEntity(List<PostagemEntity> listPostagemEntity) {
+		this.listPostagemEntity = listPostagemEntity;
+	}
 
 	public AutorEntity() {
 	
-	}
-
-	public AutorEntity(Long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
 	}
 
 	public String getName() {

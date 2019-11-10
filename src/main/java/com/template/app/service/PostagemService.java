@@ -27,6 +27,14 @@ public class PostagemService {
 		System.out.println("service");
 		PostagemEntity p = postagemRepository.get(id);
 		return p;
-	}		
+	}	
+	
+	public PostagemEntity create(PostagemEntity postagemEntity) {
+		return postagemRepository.persist(postagemEntity);
+		
+	}
+	public void delete(PostagemEntity postagemEntity) {
+		postagemRepository.delete(postagemEntity);		
+	}
 
 }
