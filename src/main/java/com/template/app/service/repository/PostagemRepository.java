@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
 import com.template.app.entity.PostagemEntity;
@@ -49,7 +50,7 @@ public class PostagemRepository {
 			CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
 			CriteriaQuery q = cb.createQuery(PostagemEntity.class);
 			Root o = q.from(PostagemEntity.class);
-			//o.fetch("postagem", JoinType.LEFT);
+			o.fetch("autorEntity", JoinType.LEFT);
 			q.select(o);
 			q.where(cb.equal(o.get("id"), id));
 			PostagemEntity p = (PostagemEntity)getEntityManager().createQuery(q).getSingleResult();	

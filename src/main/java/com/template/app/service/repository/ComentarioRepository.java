@@ -12,7 +12,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
-import com.template.app.entity.AutorEntity;
 import com.template.app.entity.ComentarioEntity;
 import com.template.app.exception.AppException;
 import com.template.app.messages.AppBeanMessages;
@@ -48,9 +47,9 @@ public class ComentarioRepository {
 	public ComentarioEntity get(Long id) {
 		try {
 			CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
-			CriteriaQuery q = cb.createQuery(AutorEntity.class);
-			Root o = q.from(AutorEntity.class);
-			//o.fetch("comentarios", JoinType.LEFT);
+			CriteriaQuery q = cb.createQuery(ComentarioEntity.class);
+			Root o = q.from(ComentarioEntity.class);
+			o.fetch("postagemEntity", JoinType.LEFT);
 			q.select(o);
 			q.where(cb.equal(o.get("id"), id));
 

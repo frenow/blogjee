@@ -2,10 +2,11 @@ README
 
 Comments:
 =========
-http://localhost:8080/templatejee/rest/company/all
+http://localhost:8080/blogjee/rest/autor/all
 
-http://localhost:8080/templatejee/rest/employee/all
+http://localhost:8080/blogjee/rest/postagem/all
 
+http://localhost:8080/blogjee/rest/comentario/all
 
 criar novo autor
 POST http://localhost:8080/blogjee/rest/autor/create

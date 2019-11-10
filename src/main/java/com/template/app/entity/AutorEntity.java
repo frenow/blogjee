@@ -42,7 +42,7 @@ public class AutorEntity implements IEntity<Long> {
 	@Column
 	private String name;
 	
-	@OneToMany (targetEntity = PostagemEntity.class, fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="autorEntity")
+	@OneToMany (targetEntity = PostagemEntity.class, cascade=CascadeType.ALL, mappedBy="autorEntity")
 	private List<PostagemEntity> listPostagemEntity;
 	
 

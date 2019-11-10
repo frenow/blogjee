@@ -13,8 +13,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.template.app.entity.AutorEntity;
+import com.template.app.entity.PostagemEntity;
 import com.template.app.exception.AppException;
 import com.template.app.service.AutorService;
+import com.template.app.service.PostagemService;
 
 @Path("/autor")
 @Produces({ MediaType.APPLICATION_JSON })
@@ -49,5 +51,5 @@ public class AutorRest {
 		AutorEntity a =  autorService.get(entityId);
 		return a;
 	}	
-	
+
 }

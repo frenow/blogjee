@@ -50,8 +50,8 @@ public class PostagemEntity implements IEntity<Long> {
     @XmlTransient
 	private AutorEntity autorEntity;
     
-	@OneToMany (targetEntity = ComentarioEntity.class, fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="postagemEntity")
-    private List<ComentarioEntity> listComentarioEntity; 
+	@OneToMany (targetEntity = ComentarioEntity.class, cascade=CascadeType.ALL, mappedBy="postagemEntity")
+	private List<ComentarioEntity> listComentarioEntity; 
     
 	public PostagemEntity(Long id, String postagem, AutorEntity autorEntity,
 			List<ComentarioEntity> listComentarioEntity) {

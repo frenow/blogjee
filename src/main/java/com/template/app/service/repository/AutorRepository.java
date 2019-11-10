@@ -49,7 +49,7 @@ public class AutorRepository {
 			CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
 			CriteriaQuery q = cb.createQuery(AutorEntity.class);
 			Root o = q.from(AutorEntity.class);
-			//o.fetch("postagemEntity", JoinType.LEFT);
+			o.fetch("listPostagemEntity", JoinType.LEFT);
 			q.select(o);
 			q.where(cb.equal(o.get("id"), id));
 
