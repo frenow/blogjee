@@ -1,5 +1,6 @@
 package com.template.app.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,7 +31,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 @NamedQueries({
-    @NamedQuery(name="PostagemEntity.retrieveAll", query="Select distinct p from PostagemEntity p")
+    @NamedQuery(name="PostagemEntity.retrieveAll", query="Select distinct p from PostagemEntity p order by p.data desc")
 }) 
 
 public class PostagemEntity implements IEntity<Long> {
@@ -45,7 +46,27 @@ public class PostagemEntity implements IEntity<Long> {
 	@Column
 	private String postagem;
 	
-    @ManyToOne (targetEntity = AutorEntity.class)  
+	@Column
+	private Date data;
+	
+    public PostagemEntity(Long id, String postagem, Date data, AutorEntity autorEntity,
+			List<ComentarioEntity> listComentarioEntity) {
+		this.id = id;
+		this.postagem = postagem;
+		this.data = data;
+		this.autorEntity = autorEntity;
+		this.listComentarioEntity = listComentarioEntity;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	@ManyToOne (targetEntity = AutorEntity.class)  
     @JoinColumn(name="AUTOR_ID", referencedColumnName="ID")
     @XmlTransient
 	private AutorEntity autorEntity;
@@ -53,14 +74,6 @@ public class PostagemEntity implements IEntity<Long> {
 	@OneToMany (targetEntity = ComentarioEntity.class, cascade=CascadeType.ALL, mappedBy="postagemEntity")
 	private List<ComentarioEntity> listComentarioEntity; 
     
-	public PostagemEntity(Long id, String postagem, AutorEntity autorEntity,
-			List<ComentarioEntity> listComentarioEntity) {
-		this.id = id;
-		this.postagem = postagem;
-		this.autorEntity = autorEntity;
-		this.listComentarioEntity = listComentarioEntity;
-	}
-
 	public List<ComentarioEntity> getListComentarioEntity() {
 		return listComentarioEntity;
 	}

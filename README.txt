@@ -18,6 +18,7 @@ POST http://localhost:8080/blogjee/rest/autor/create
 criar nova postagem
 POST http://localhost:8080/blogjee/rest/postagem/create
 {
+	"data": 1573836362245,
 	"autorEntity": "3",
 	"postagem": "teste de gravacao nova postagem",
 	"id": null

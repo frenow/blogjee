@@ -1,9 +1,9 @@
 insert into AUTOR (id, name) values ('1', 'Joao');
 insert into AUTOR (id, name) values ('2', 'Maria');
 insert into AUTOR (id, name) values ('3', 'Jose');
-insert into POSTAGEM (id, postagem, autor_id) values ('1', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',1);
-insert into POSTAGEM (id, postagem, autor_id) values ('2', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',1);
-insert into POSTAGEM (id, postagem, autor_id) values ('3', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',2);
+insert into POSTAGEM (id, postagem, autor_id, data) values ('1', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',1,CURRENT_TIMESTAMP());
+insert into POSTAGEM (id, postagem, autor_id, data) values ('2', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',1,CURRENT_TIMESTAMP());
+insert into POSTAGEM (id, postagem, autor_id, data) values ('3', 'xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxxxxx',2,CURRENT_TIMESTAMP());
 insert into COMENTARIO (id, comentario, data, postagem_id) values ('1', 'xxxx xxxxxxxx xxxxxxxxxxx', CURRENT_TIMESTAMP(),1);
 insert into COMENTARIO (id, comentario, data, postagem_id) values ('2', 'xxxx xxxxxxxx xxxxxxxxxxx', CURRENT_TIMESTAMP(),1);
 insert into COMENTARIO (id, comentario, data, postagem_id) values ('3', 'xxxx xxxxxxxx xxxxxxxxxxx', CURRENT_TIMESTAMP(),2);
